@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VanaRaksha — Indian Plant Intelligence</title>
+  <meta name="description" content="VanaRaksha is a smart IoT plant monitoring system for 10 sacred Indian plants — live sensors, analytics and care intelligence." />
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="nav.css" />
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+
+  <!-- BACKGROUND -->
+  <div class="bg-mandala" aria-hidden="true">
+    <div class="mandala-ring ring-1"></div>
+    <div class="mandala-ring ring-2"></div>
+    <div class="mandala-ring ring-3"></div>
+  </div>
+
+  <!-- SIDE NAV OVERLAY -->
+  <div class="nav-overlay" id="nav-overlay"></div>
+
+  <!-- SIDE NAV -->
+  <nav class="side-nav" id="side-nav" aria-label="Site navigation">
+    <div class="side-nav-header">
+      <svg class="side-nav-logo" viewBox="0 0 40 40" fill="none">
+        <path d="M20 4 C20 4, 36 10, 36 24 C36 32, 28 36, 20 36 C12 36, 4 32, 4 24 C4 10, 20 4 20 4Z" fill="currentColor" opacity="0.9"/>
+        <path d="M20 36 L20 14" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M20 26 C20 26, 13 20, 10 16" stroke="white" stroke-width="1" stroke-linecap="round" opacity="0.7"/>
+        <path d="M20 22 C20 22, 27 18, 30 15" stroke="white" stroke-width="1" stroke-linecap="round" opacity="0.7"/>
+      </svg>
+      <div>
+        <div class="side-nav-brand">VanaRaksha</div>
+        <span class="side-nav-sub">वन रक्षा · Smart Plant Intelligence</span>
+      </div>
+    </div>
+    <div class="side-nav-links">
+      <span class="nav-section-label">Navigate</span>
+      <a class="nav-link active" href="home.html">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-label">Home</span>
+      </a>
+      <a class="nav-link" href="index.html">
+        <span class="nav-icon">📡</span>
+        <span class="nav-label">Dashboard</span>
+        <span class="nav-badge">LIVE</span>
+      </a>
+      <a class="nav-link" href="library.html">
+        <span class="nav-icon">🌿</span>
+        <span class="nav-label">Plant Library</span>
+        <span class="nav-badge">10</span>
+      </a>
+
+      <a class="nav-link" href="about.html">
+        <span class="nav-icon">ℹ️</span>
+        <span class="nav-label">About Project</span>
+      </a>
+    </div>
+    <div class="side-nav-footer">
+      <div class="nav-version">VanaRaksha v3.0</div>
+      <div class="nav-flag">🇮🇳 Indian Flora Edition · 10 Plants · 60 Sensors</div>
+    </div>
+  </nav>
+
+  <!-- HAMBURGER TOGGLE -->
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-eyebrow">
+      <span class="pulse-dot"></span>
+      IoT Plant Intelligence · Bengaluru
+    </div>
+
+    <h1 class="hero-title">
+      <em>VanaRaksha</em>
+    </h1>
+    <p class="hero-devanagari">वन रक्षा · Guardian of the Forest</p>
+
+    <p class="hero-tagline">
+      A smart monitoring system breathing life into India's most sacred plants —
+      live sensor data, intelligent alerts, and ancient botanical wisdom, unified.
+    </p>
+
+    <div class="hero-cta-row">
+      <a href="index.html" class="btn-launch" id="launch-dashboard-btn">
+        Launch Dashboard <span class="arrow">→</span>
+      </a>
+      <a href="library.html" class="btn-ghost">
+        🌿 Explore Plants
+      </a>
+    </div>
+
+    <!-- Stats Strip -->
+    <div class="stats-strip">
+      <div class="stat-item">
+        <span class="stat-num-big">10</span>
+        <span class="stat-label-sm">Sacred Plants</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num-big">60</span>
+        <span class="stat-label-sm">Live Sensors</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num-big">5s</span>
+        <span class="stat-label-sm">Update Interval</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num-big">6</span>
+        <span class="stat-label-sm">Parameters</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <p class="features-label">What's Inside</p>
+    <h2 class="features-heading">Intelligence for Every Leaf</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <span class="feature-icon">📡</span>
+        <div class="feature-title">Live Sensor Data</div>
+        <p class="feature-desc">Real-time readings of soil moisture, temperature, humidity, light, pH and water level — refreshed every 5 seconds.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📊</span>
+        <div class="feature-title">Analytics & Charts</div>
+        <p class="feature-desc">Historical trend lines, health score bars and sensor status overview give you the full picture at a glance.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">⚠️</span>
+        <div class="feature-title">Smart Alerts</div>
+        <p class="feature-desc">Automatic critical and warning alerts when any plant's conditions drift outside ideal zones, with an event log.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🌿</span>
+        <div class="feature-title">Plant Knowledge</div>
+        <p class="feature-desc">Detailed botanical library covering scientific names, medicinal uses, watering schedules and seasonal care for all 10 plants.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">💧</span>
+        <div class="feature-title">Care Controls</div>
+        <p class="feature-desc">Trigger manual watering, view per-plant care tips and seasonal guidance directly from the dashboard.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANT PILLS PREVIEW -->
+  <section class="plants-preview">
+    <p class="features-label">Monitored Flora</p>
+    <h2 class="features-heading" style="margin-bottom:24px;">10 Plants of Indian Heritage</h2>
+    <div class="plants-scroll">
+      <span class="plant-pill">🌿 Tulsi · तुलसी</span>
+      <span class="plant-pill">🌳 Neem · नीम</span>
+      <span class="plant-pill">🍃 Curry Leaf · कड़ी पत्ता</span>
+      <span class="plant-pill">🪷 Lotus · कमल</span>
+      <span class="plant-pill">🌸 Mogra · मोगरा</span>
+      <span class="plant-pill">🗡️ Snake Plant · सास की जुबान</span>
+      <span class="plant-pill">💚 Money Plant · मनी प्लांट</span>
+      <span class="plant-pill">🌵 Aloe Vera · घृतकुमारी</span>
+      <span class="plant-pill">🕷️ Spider Plant · मकड़ी पौधा</span>
+      <span class="plant-pill">🌹 Rose · गुलाब</span>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="home-footer">
+    <span>VanaRaksha v3.0</span><span class="footer-sep">·</span>
+    <span>IoT Plant Monitoring</span><span class="footer-sep">·</span>
+    <span>🇮🇳 Indian Flora Edition — 10 Plants</span>
+  </footer>
+
+  <script src="nav.js"></script>
+</body>
+</html>

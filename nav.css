@@ -1,0 +1,168 @@
+/* ═══════════════════════════════════════════════════════════
+   VanaRaksha — nav.css
+   Shared Side Navigation · v1.0
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── NAV TOGGLE BUTTON ─── */
+.nav-toggle {
+  position: fixed;
+  top: 14px;
+  right: 20px;
+  z-index: 1100;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(26, 58, 42, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(82, 183, 136, 0.3);
+  box-shadow: 0 4px 16px rgba(26, 58, 42, 0.25);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: background 0.2s, transform 0.2s;
+  padding: 0;
+}
+.nav-toggle:hover {
+  background: rgba(45, 106, 79, 0.98);
+  transform: scale(1.05);
+}
+.nav-toggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ─── SIDE NAV DRAWER ─── */
+.side-nav {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 290px;
+  height: 100vh;
+  background: linear-gradient(180deg, #0f2318 0%, #1a3a2a 60%, #0d1f14 100%);
+  border-left: 1px solid rgba(82, 183, 136, 0.15);
+  box-shadow: -8px 0 40px rgba(0, 0, 0, 0.4);
+  z-index: 1050;
+  transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.side-nav.open { right: 0; }
+
+/* Nav Header */
+.side-nav-header {
+  padding: 28px 24px 20px;
+  border-bottom: 1px solid rgba(82, 183, 136, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.side-nav-logo {
+  width: 36px;
+  height: 36px;
+  color: #52b788;
+  flex-shrink: 0;
+}
+.side-nav-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+.side-nav-sub {
+  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.08em;
+  margin-top: 3px;
+  display: block;
+}
+
+/* Nav Links */
+.side-nav-links {
+  padding: 16px 12px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow-y: auto;
+}
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.65);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+.nav-link:hover {
+  background: rgba(82, 183, 136, 0.1);
+  color: rgba(255, 255, 255, 0.92);
+  transform: translateX(-3px);
+}
+.nav-link.active {
+  background: linear-gradient(135deg, rgba(45, 106, 79, 0.6), rgba(82, 183, 136, 0.15));
+  color: #fff;
+  font-weight: 500;
+  border: 1px solid rgba(82, 183, 136, 0.25);
+}
+.nav-icon { font-size: 1.1rem; width: 22px; text-align: center; flex-shrink: 0; }
+.nav-label { flex: 1; }
+.nav-badge {
+  font-size: 0.6rem;
+  background: rgba(82, 183, 136, 0.25);
+  color: #52b788;
+  padding: 2px 7px;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+.nav-section-label {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.2);
+  padding: 12px 16px 4px;
+}
+
+/* Nav Footer */
+.side-nav-footer {
+  padding: 16px 24px 24px;
+  border-top: 1px solid rgba(82, 183, 136, 0.1);
+}
+.nav-version { font-size: 0.65rem; color: rgba(255, 255, 255, 0.2); letter-spacing: 0.05em; }
+.nav-flag    { font-size: 0.7rem;  color: rgba(255, 255, 255, 0.3); margin-top: 4px; }
+
+/* ─── NAV OVERLAY ─── */
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(3px);
+  z-index: 1040;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.nav-overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}

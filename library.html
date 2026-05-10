@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>VanaRaksha — Plant Library</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="nav.css" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    :root {
+      --gd: #1a3a2a;
+      --gm: #2d6a4f;
+      --gs: #52b788;
+      --cream: #faf8f2;
+      --td: #1c2e22;
+      --tm: #4a6356;
+      --ts: #7a9a85
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--cream);
+      color: var(--td);
+      min-height: 100vh;
+      overflow-x: hidden
+    }
+
+    .bg-mandala {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden
+    }
+
+    .mandala-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(82, 183, 136, .07);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%)
+    }
+
+    .ring-1 {
+      width: 600px;
+      height: 600px;
+      animation: rot 60s linear infinite
+    }
+
+    .ring-2 {
+      width: 1000px;
+      height: 1000px;
+      animation: rot 90s linear infinite reverse
+    }
+
+    @keyframes rot {
+      to {
+        transform: translate(-50%, -50%) rotate(360deg)
+      }
+    }
+
+    /* HEADER */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(26, 58, 42, .97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(82, 183, 136, .18);
+      box-shadow: 0 6px 24px rgba(26, 58, 42, .12)
+    }
+
+    .header-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none
+    }
+
+    .brand-leaf {
+      width: 36px;
+      height: 36px;
+      color: #52b788;
+      flex-shrink: 0
+    }
+
+    .brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: .02em;
+      line-height: 1
+    }
+
+    .brand-sub {
+      font-size: .65rem;
+      color: rgba(255, 255, 255, .45);
+      letter-spacing: .08em;
+      margin-top: 2px;
+      display: block
+    }
+
+    .page-tag {
+      background: rgba(82, 183, 136, .15);
+      border: 1px solid rgba(82, 183, 136, .3);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: .72rem;
+      color: #52b788;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase
+    }
+
+    /* MAIN */
+    .main {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+      position: relative;
+      z-index: 1
+    }
+
+    .page-hero {
+      text-align: center;
+      margin-bottom: 48px
+    }
+
+    .page-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 600;
+      color: var(--gd);
+      margin-bottom: 10px
+    }
+
+    .page-hero p {
+      font-size: 1rem;
+      color: var(--tm);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.6
+    }
+
+    /* PLANT CARDS */
+    .lib-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px
+    }
+
+    .lib-card {
+      background: #fff;
+      border-radius: 20px;
+      border: 1px solid rgba(26, 58, 42, .07);
+      box-shadow: 0 2px 12px rgba(26, 58, 42, .06);
+      overflow: hidden;
+      transition: transform .25s, box-shadow .25s;
+      animation: fadeUp .4s ease both
+    }
+
+    .lib-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 40px rgba(26, 58, 42, .1)
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    .lib-card-top {
+      height: 5px;
+      width: 100%
+    }
+
+    .lib-card-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      background: linear-gradient(135deg, #d8f3dc, #b7e4c7)
+    }
+
+    .lib-card-img-placeholder {
+      width: 100%;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4.5rem;
+      background: linear-gradient(135deg, var(--img-bg, #d8f3dc), var(--img-bg2, #b7e4c7))
+    }
+
+    .lib-body {
+      padding: 20px
+    }
+
+    .lib-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 14px
+    }
+
+    .lib-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--gd);
+      line-height: 1.1
+    }
+
+    .lib-hindi {
+      font-size: .85rem;
+      color: var(--ts);
+      margin-top: 2px;
+      display: block
+    }
+
+    .lib-species {
+      font-size: .68rem;
+      color: var(--ts);
+      font-style: italic;
+      margin-top: 3px;
+      display: block
+    }
+
+    .lib-emoji-badge {
+      font-size: 1.8rem;
+      flex-shrink: 0
+    }
+
+    .lib-section {
+      margin-bottom: 14px
+    }
+
+    .lib-section-title {
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--gs);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px
+    }
+
+    .lib-text {
+      font-size: .8rem;
+      color: var(--tm);
+      line-height: 1.55
+    }
+
+    .lib-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px
+    }
+
+    .lib-pill {
+      font-size: .7rem;
+      padding: 4px 10px;
+      border-radius: 10px;
+      font-weight: 500
+    }
+
+    .pill-blue {
+      background: #e3f2fd;
+      color: #1565c0
+    }
+
+    .pill-green {
+      background: #e8f5e9;
+      color: #2e7d32
+    }
+
+    .pill-amber {
+      background: #fff8e1;
+      color: #e65100
+    }
+
+    .pill-purple {
+      background: #f3e5f5;
+      color: #6a1b9a
+    }
+
+    .pill-rose {
+      background: #fce8ef;
+      color: #ad1457
+    }
+
+    .lib-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 6px
+    }
+
+    .lib-metric {
+      background: rgba(26, 58, 42, .03);
+      border-radius: 10px;
+      padding: 8px 10px;
+      text-align: center
+    }
+
+    .lib-metric-icon {
+      font-size: .9rem;
+      display: block
+    }
+
+    .lib-metric-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .78rem;
+      font-weight: 500;
+      color: var(--td);
+      display: block
+    }
+
+    .lib-metric-lbl {
+      font-size: .6rem;
+      color: var(--ts);
+      text-transform: uppercase;
+      letter-spacing: .05em
+    }
+
+    .img-url-note {
+      font-size: .65rem;
+      color: var(--ts);
+      margin-top: 6px;
+      font-style: italic;
+      display: flex;
+      align-items: center;
+      gap: 4px
+    }
+
+    .img-url-note a {
+      color: var(--gs);
+      text-decoration: underline dotted
+    }
+
+    footer {
+      text-align: center;
+      font-size: .72rem;
+      color: var(--ts);
+      padding: 20px 24px 32px;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap
+    }
+
+    .sep {
+      opacity: .4
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-mandala" aria-hidden="true">
+    <div class="mandala-ring ring-1"></div>
+    <div class="mandala-ring ring-2"></div>
+  </div>
+
+  <div class="nav-overlay" id="nav-overlay"></div>
+  <nav class="side-nav" id="side-nav">
+    <div class="side-nav-header">
+      <svg class="side-nav-logo" viewBox="0 0 40 40" fill="none">
+        <path d="M20 4 C20 4, 36 10, 36 24 C36 32, 28 36, 20 36 C12 36, 4 32, 4 24 C4 10, 20 4 20 4Z"
+          fill="currentColor" opacity=".9" />
+        <path d="M20 36 L20 14" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+      </svg>
+      <div>
+        <div class="side-nav-brand">VanaRaksha</div><span class="side-nav-sub">वन रक्षा · Smart Plant
+          Intelligence</span>
+      </div>
+    </div>
+    <div class="side-nav-links">
+      <span class="nav-section-label">Navigate</span>
+      <a class="nav-link" href="home.html"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></a>
+      <a class="nav-link" href="index.html"><span class="nav-icon">📡</span><span
+          class="nav-label">Dashboard</span><span class="nav-badge">LIVE</span></a>
+      <a class="nav-link active" href="library.html"><span class="nav-icon">🌿</span><span class="nav-label">Plant
+          Library</span><span class="nav-badge">10</span></a>
+      <a class="nav-link" href="about.html"><span class="nav-icon">ℹ️</span><span class="nav-label">About
+          Project</span></a>
+    </div>
+    <div class="side-nav-footer">
+      <div class="nav-version">VanaRaksha v3.0</div>
+      <div class="nav-flag">🇮🇳 Indian Flora Edition</div>
+    </div>
+  </nav>
+  <button class="nav-toggle" id="nav-toggle"
+    aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+
+  <header class="header">
+    <div class="header-inner">
+      <a class="brand" href="home.html">
+        <svg class="brand-leaf" viewBox="0 0 40 40" fill="none">
+          <path d="M20 4 C20 4, 36 10, 36 24 C36 32, 28 36, 20 36 C12 36, 4 32, 4 24 C4 10, 20 4 20 4Z"
+            fill="currentColor" opacity=".9" />
+          <path d="M20 36 L20 14" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+        </svg>
+        <div>
+          <div class="brand-name">VanaRaksha</div><span class="brand-sub">वन रक्षा · Smart Plant Intelligence</span>
+        </div>
+      </a>
+      <span class="page-tag">🌿 Plant Library</span>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="page-hero">
+      <h1>Sacred Plant Knowledge</h1>
+      <p>A botanical encyclopedia of all 10 monitored Indian plants — their science, care, and heritage.</p>
+    </div>
+
+    <div class="lib-grid" id="lib-grid">
+      <!-- Injected by library.js below -->
+    </div>
+  </main>
+
+  <footer>
+    <span>VanaRaksha v3.0</span><span class="sep">·</span>
+    <span>Plant Library</span><span class="sep">·</span>
+    <span>🇮🇳 10 Indian Plants</span>
+  </footer>
+
+  <script src="nav.js"></script>
+  <script>
+    const LIBRARY = [
+      {
+        id: 'tulsi', name: 'Tulsi', hindi: 'तुलसी', species: 'Ocimum tenuiflorum',
+        emoji: '🌿', accent: '#3a8c5e', bg: '#c8f0d8', bg2: '#e8f5ed',
+        // ↓ PASTE YOUR IMAGE URL BELOW (or leave empty to show emoji placeholder)
+        imageUrl: '',
+        desc: 'Sacred Holy Basil — one of the most revered plants in Indian households, used in daily prayers and Ayurvedic medicine for millennia.',
+        medicalUses: ['Anti-inflammatory', 'Immune booster', 'Stress relief (adaptogen)', 'Cold & fever remedy', 'Digestive aid'],
+        idealConditions: { temp: '20–30°C', humidity: '50–70%', light: 'Full sun 4–6h', ph: '6.0–7.0', soil: 'Loamy, well-draining' },
+        watering: 'Every 2–3 days in summer; every 4–5 days in winter. Keep moist but not waterlogged.',
+        sunlight: '4–6 hours of direct morning sunlight. South or east-facing ideal.',
+        waterSchedule: 'Morning (6–8 AM)',
+        seasons: { summer: 'Water daily, provide afternoon shade above 38°C', monsoon: 'Reduce watering, ensure drainage', winter: 'Water every 4–5 days, protect from cold winds' }
+      },
+      {
+        id: 'neem', name: 'Neem', hindi: 'नीम', species: 'Azadirachta indica',
+        emoji: '🌳', accent: '#4a7c2e', bg: '#c5e8a0', bg2: '#eaf3e0',
+        imageUrl: '',
+        desc: 'The village pharmacy — Neem has been central to Indian folk medicine for 5000+ years. Every part of the tree has a use.',
+        medicalUses: ['Natural antibiotic', 'Skin disease treatment', 'Antifungal', 'Insect repellent', 'Blood purifier'],
+        idealConditions: { temp: '25–38°C', humidity: '40–60%', light: 'Full sun 6h+', ph: '7.0–8.0', soil: 'Sandy/loamy, alkaline' },
+        watering: 'Once a week; twice in peak summer. Drought-tolerant once established.',
+        sunlight: 'Full sun — minimum 6 hours. Thrives in intense Indian sun.',
+        waterSchedule: 'Evening (to reduce evaporation)',
+        seasons: { summer: 'Water twice weekly, mulch roots', monsoon: 'No extra watering, watch for root rot', winter: 'Water monthly only' }
+      },
+      {
+        id: 'curry', name: 'Curry Leaf', hindi: 'कड़ी पत्ता', species: 'Murraya koenigii',
+        emoji: '🍃', accent: '#7ab02a', bg: '#d8f0a0', bg2: '#f0f7e0',
+        imageUrl: '',
+        desc: 'Kadi Patta — the soul of South Indian cooking, loaded with iron, calcium, and antioxidants used in Ayurveda.',
+        medicalUses: ['Rich in antioxidants', 'Hair growth stimulant', 'Manages diabetes', 'Digestive health', 'Rich in iron & calcium'],
+        idealConditions: { temp: '22–32°C', humidity: '55–72%', light: 'Partial sun 4–6h', ph: '6.4–7.0', soil: 'Rich, well-draining with compost' },
+        watering: 'When top 2 cm of soil is dry — roughly every 2 days.',
+        sunlight: 'Bright indirect to partial sun. East-facing balcony or kitchen window.',
+        waterSchedule: 'Morning (7–9 AM)',
+        seasons: { summer: 'Water daily, mist leaves', monsoon: 'Reduce watering, watch for yellowing', winter: 'Water every 3 days, bring indoors below 10°C' }
+      },
+      {
+        id: 'lotus', name: 'Lotus', hindi: 'कमल', species: 'Nelumbo nucifera',
+        emoji: '🪷', accent: '#d4607e', bg: '#f0b8c8', bg2: '#fce8ef',
+        imageUrl: '',
+        desc: 'National Flower of India — a sacred aquatic plant symbolising purity, enlightenment, and the cycle of life in Hindu, Buddhist and Jain traditions.',
+        medicalUses: ['Heart health (seeds)', 'Anti-diarrheal', 'Cooling properties', 'Skin care (leaf extract)', 'Anxiety relief'],
+        idealConditions: { temp: '25–34°C', humidity: '70–88%', light: 'Full sun 6h+', ph: '7.0–7.8', soil: 'Heavy clay in standing water' },
+        watering: 'Aquatic — keep in 15–40 cm of standing water. Top up as evaporates.',
+        sunlight: 'Full sun mandatory — minimum 6 hours for blooming.',
+        waterSchedule: 'Top up water in morning (sunrise)',
+        seasons: { summer: "Peak season — ensure water doesn't exceed 35°C", monsoon: 'Thrives! Protect from overflow', winter: 'Goes dormant — reduce water level, protect tubers' }
+      },
+      {
+        id: 'jasmine', name: 'Mogra', hindi: 'मोगरा', species: 'Jasminum sambac',
+        emoji: '🌸', accent: '#c8a000', bg: '#f5e080', bg2: '#fdf6d9',
+        imageUrl: '',
+        desc: 'Arabian Jasmine — India\'s fragrant night bloomer, used in garlands, perfumes and religious offerings across the subcontinent.',
+        medicalUses: ['Aromatherapy (anxiety)', 'Antiseptic (leaf paste)', 'Headache relief', 'Skin brightening', 'Digestive tea'],
+        idealConditions: { temp: '22–30°C', humidity: '58–74%', light: 'Partial sun 4–6h', ph: '6.5–7.2', soil: 'Rich loam with compost & mulch' },
+        watering: 'Every 2 days; daily in summer. Never let it dry out completely.',
+        sunlight: 'Partial sun — 4–6 hours. Harsh afternoon sun needs shade net.',
+        waterSchedule: 'Evening (blooms at night)',
+        seasons: { summer: 'Water generously, mist flowers, deadhead spent blooms', monsoon: 'Excellent bloom season — reduce watering', winter: 'Reduce watering, prune lightly after flowering' }
+      },
+      {
+        id: 'snake', name: 'Snake Plant', hindi: 'सास की जुबान', species: 'Sansevieria trifasciata',
+        emoji: '🗡️', accent: '#5a7a3a', bg: '#b8d898', bg2: '#edf5e0',
+        imageUrl: '',
+        desc: 'The indestructible air purifier — NASA-listed as one of the best indoor plants for removing toxins like formaldehyde and benzene.',
+        medicalUses: ['Air purification', 'Removes formaldehyde', 'Adds oxygen at night', 'Allergy reduction', 'Low-maintenance therapy plant'],
+        idealConditions: { temp: '18–30°C', humidity: '30–50%', light: 'Low to bright indirect', ph: '6.0–7.0', soil: 'Sandy succulent/cactus mix' },
+        watering: 'Only when soil is completely dry — every 2–6 weeks. Overwatering is fatal.',
+        sunlight: 'Extremely adaptable — low to bright indirect. Avoid direct harsh sun.',
+        waterSchedule: 'Morning — ensure pot drains fully',
+        seasons: { summer: 'Water every 2–3 weeks', monsoon: 'Monthly or less — high humidity risks rot', winter: 'Every 6–8 weeks; semi-dormant' }
+      },
+      {
+        id: 'money', name: 'Money Plant', hindi: 'मनी प्लांट', species: 'Epipremnum aureum',
+        emoji: '💚', accent: '#2e8b57', bg: '#a0d8b0', bg2: '#e0f5ec',
+        imageUrl: '',
+        desc: 'Pothos — India\'s most popular lucky charm plant, believed to bring prosperity. A rapid grower that thrives even in water jars.',
+        medicalUses: ['Air purification', 'Removes CO₂', 'Reduces stress (biophilic)', 'Humidifier effect', 'VOC absorption'],
+        idealConditions: { temp: '20–30°C', humidity: '50–70%', light: 'Indirect bright to low', ph: '6.0–6.8', soil: 'Well-draining with cocopeat' },
+        watering: 'When top 2–3 cm of soil is dry — roughly every 5–7 days.',
+        sunlight: 'Thrives in indirect bright light. Can survive low light (variegation may fade).',
+        waterSchedule: 'Morning',
+        seasons: { summer: 'Every 4–5 days, mist leaves', monsoon: 'Grows vigorously — reduce watering', winter: 'Every 7–10 days, keep from AC vents' }
+      },
+      {
+        id: 'aloe', name: 'Aloe Vera', hindi: 'घृतकुमारी', species: 'Aloe barbadensis miller',
+        emoji: '🌵', accent: '#a0b832', bg: '#d8e888', bg2: '#f4f9e0',
+        imageUrl: '',
+        desc: 'The plant of immortality — Aloe vera is a succulent whose gel is used globally for burns, skin care, and gut health.',
+        medicalUses: ['Burns & wound healing', 'Skin moisturiser', 'Gut health (juice)', 'Anti-inflammatory gel', 'Hair conditioning'],
+        idealConditions: { temp: '18–35°C', humidity: '20–40%', light: 'Bright direct sun', ph: '6.5–7.5', soil: 'Gritty succulent/cactus mix' },
+        watering: 'Deeply but infrequently — every 3 weeks summer, monthly winter. Soak-and-dry method.',
+        sunlight: 'Loves bright direct sunlight. South-facing window or terrace ideal.',
+        waterSchedule: 'Morning — let soil dry completely before next watering',
+        seasons: { summer: 'Every 2 weeks max — watch sunburn above 45°C', monsoon: 'Move indoors or to cover — root rot risk', winter: 'Once a month only; cold below 5°C damages leaves' }
+      },
+      {
+        id: 'spider', name: 'Spider Plant', hindi: 'मकड़ी पौधा', species: 'Chlorophytum comosum',
+        emoji: '🕷️', accent: '#6aab4e', bg: '#b0dca0', bg2: '#e8f7e0',
+        imageUrl: '',
+        desc: 'Hardy and responsive — the Spider Plant produces cascading "spiderettes" and is one of the most effective natural air purifiers.',
+        medicalUses: ['Air purification', 'Absorbs CO & formaldehyde', 'Reduces indoor humidity', 'Allergy relief', 'Non-toxic to pets'],
+        idealConditions: { temp: '18–28°C', humidity: '45–65%', light: 'Indirect bright to partial', ph: '6.0–6.8', soil: 'Standard well-draining potting mix' },
+        watering: 'Every 5–7 days. Use filtered or rain water — sensitive to fluoride.',
+        sunlight: 'Bright indirect. East-facing window preserves best variegation.',
+        waterSchedule: 'Morning',
+        seasons: { summer: 'Every 4 days, mist regularly', monsoon: 'Rapid growth — reduce watering, repot if needed', winter: 'Every 10 days; bring indoors below 7°C' }
+      },
+      {
+        id: 'rose', name: 'Rose', hindi: 'गुलाब', species: 'Rosa indica',
+        emoji: '🌹', accent: '#e05c7a', bg: '#f0a0b8', bg2: '#fce8ef',
+        imageUrl: '',
+        desc: 'The queen of flowers — Roses have been cultivated in India for thousands of years for perfume, religious use, medicine and culinary arts.',
+        medicalUses: ['Rose water (skin toner)', 'Anti-inflammatory petals', 'Stress-relief aromatherapy', 'Vitamin C (rose hips)', 'Digestive (gulkand)'],
+        idealConditions: { temp: '20–30°C', humidity: '55–72%', light: 'Full sun 6–8h', ph: '6.3–6.8', soil: 'Rich well-draining with compost' },
+        watering: '2–3 times a week; increase during flowering season.',
+        sunlight: '6–8 hours of direct sunlight daily for healthy blooms.',
+        waterSchedule: 'Early morning (remove dried flowers regularly)',
+        seasons: { summer: 'Water frequently, mulch roots to retain moisture', monsoon: 'Watch for fungal diseases — ensure drainage & airflow', winter: 'Water less, prune lightly to prepare for spring flowering' }
+      }
+    ];
+
+    function buildCards() {
+      const grid = document.getElementById('lib-grid');
+      grid.innerHTML = LIBRARY.map((p, i) => `
+    <article class="lib-card" style="animation-delay:${i * 0.07}s">
+      <div class="lib-card-top" style="background:linear-gradient(90deg,${p.accent},${p.accent}99)"></div>
+      ${p.imageUrl
+          ? `<img class="lib-card-img" src="${p.imageUrl}" alt="${p.name}" loading="lazy">`
+          : `<div class="lib-card-img-placeholder" style="--img-bg:${p.bg};--img-bg2:${p.bg2}">${p.emoji}</div>`
+        }
+      <div class="lib-body">
+        <div class="lib-head">
+          <div>
+            <div class="lib-name">${p.name}</div>
+            <span class="lib-hindi">${p.hindi}</span>
+            <span class="lib-species">${p.species}</span>
+          </div>
+          <span class="lib-emoji-badge">${p.emoji}</span>
+        </div>
+
+        <div class="lib-section">
+          <div class="lib-section-title">📖 About</div>
+          <p class="lib-text">${p.desc}</p>
+        </div>
+
+        <div class="lib-section">
+          <div class="lib-section-title">💊 Medicinal Uses</div>
+          <div class="lib-pills">
+            ${p.medicalUses.map((u, j) => `<span class="lib-pill ${['pill-green', 'pill-blue', 'pill-purple', 'pill-amber', 'pill-rose'][j % 5]}">${u}</span>`).join('')}
+          </div>
+        </div>
+
+        <div class="lib-section">
+          <div class="lib-section-title">🌡️ Ideal Conditions</div>
+          <div class="lib-row">
+            <div class="lib-metric"><span class="lib-metric-icon">🌡️</span><span class="lib-metric-val">${p.idealConditions.temp}</span><span class="lib-metric-lbl">Temperature</span></div>
+            <div class="lib-metric"><span class="lib-metric-icon">🌫️</span><span class="lib-metric-val">${p.idealConditions.humidity}</span><span class="lib-metric-lbl">Humidity</span></div>
+            <div class="lib-metric"><span class="lib-metric-icon">☀️</span><span class="lib-metric-val">${p.idealConditions.light}</span><span class="lib-metric-lbl">Sunlight</span></div>
+            <div class="lib-metric"><span class="lib-metric-icon">⚗️</span><span class="lib-metric-val">${p.idealConditions.ph}</span><span class="lib-metric-lbl">Soil pH</span></div>
+          </div>
+        </div>
+
+        <div class="lib-section">
+          <div class="lib-section-title">💧 Watering</div>
+          <p class="lib-text">${p.watering}</p>
+          <p class="lib-text" style="margin-top:4px"><strong>Best time:</strong> ${p.waterSchedule}</p>
+        </div>
+
+        <div class="lib-section">
+          <div class="lib-section-title">☀️ Sunlight</div>
+          <p class="lib-text">${p.sunlight}</p>
+        </div>
+
+        <div class="lib-section">
+          <div class="lib-section-title">🗓️ Seasonal Care</div>
+          <div class="lib-pills">
+            <span class="lib-pill pill-amber">☀️ ${p.seasons.summer}</span>
+            <span class="lib-pill pill-blue">🌧️ ${p.seasons.monsoon}</span>
+            <span class="lib-pill pill-purple">❄️ ${p.seasons.winter}</span>
+          </div>
+        </div>
+      </div>
+    </article>
+  `).join('');
+    }
+
+    buildCards();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VanaRaksha — Indian Plant Monitor</title>
+  <link rel="icon" type="image/png" href="logo.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <!-- Chart.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="nav.css" />
+
+</head>
+
+<body>
+  <!-- ░░░ SIDE NAV ░░░ -->
+  <div class="nav-overlay" id="nav-overlay"></div>
+  <nav class="side-nav" id="side-nav">
+    <div class="side-nav-header">
+      <svg class="side-nav-logo" viewBox="0 0 40 40" fill="none">
+        <path d="M20 4 C20 4, 36 10, 36 24 C36 32, 28 36, 20 36 C12 36, 4 32, 4 24 C4 10, 20 4 20 4Z"
+          fill="currentColor" opacity=".9" />
+        <path d="M20 36 L20 14" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+      </svg>
+      <div>
+        <div class="side-nav-brand">VanaRaksha</div><span class="side-nav-sub">वन रक्षा · Smart Plant
+          Intelligence</span>
+      </div>
+    </div>
+    <div class="side-nav-links">
+      <span class="nav-section-label">Navigate</span>
+      <a class="nav-link" href="home.html"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></a>
+      <a class="nav-link active" href="index.html"><span class="nav-icon">📡</span><span
+          class="nav-label">Dashboard</span><span class="nav-badge">LIVE</span></a>
+      <a class="nav-link" href="library.html"><span class="nav-icon">🌿</span><span class="nav-label">Plant
+          Library</span><span class="nav-badge">10</span></a>
+      <a class="nav-link" href="about.html"><span class="nav-icon">ℹ️</span><span class="nav-label">About
+          Project</span></a>
+    </div>
+    <div class="side-nav-footer">
+      <div class="nav-version">VanaRaksha v3.0</div>
+      <div class="nav-flag">🇮🇳 Indian Flora Edition</div>
+    </div>
+  </nav>
+  <button class="nav-toggle" id="nav-toggle"
+    aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+
+
+  <!-- ░░░ WATER FLASH OVERLAY ░░░ -->
+  <div class="water-flash" id="water-flash"></div>
+
+  <!-- ░░░ BACKGROUND DECORATION ░░░ -->
+  <div class="bg-mandala" aria-hidden="true">
+    <div class="mandala-ring ring-1"></div>
+    <div class="mandala-ring ring-2"></div>
+    <div class="mandala-ring ring-3"></div>
+  </div>
+
+  <!-- ░░░ HEADER ░░░ -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-leaf" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 4 C20 4, 36 10, 36 24 C36 32, 28 36, 20 36 C12 36, 4 32, 4 24 C4 10, 20 4 20 4Z"
+              fill="currentColor" opacity="0.9" />
+            <path d="M20 36 L20 14" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+            <path d="M20 26 C20 26, 13 20, 10 16" stroke="white" stroke-width="1" stroke-linecap="round"
+              opacity="0.7" />
+            <path d="M20 22 C20 22, 27 18, 30 15" stroke="white" stroke-width="1" stroke-linecap="round"
+              opacity="0.7" />
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1 class="brand-name">VanaRaksha</h1>
+          <span class="brand-sub">वन रक्षा · Smart Plant Intelligence</span>
+        </div>
+      </div>
+
+      <nav class="header-nav">
+        <div class="live-indicator">
+          <span class="pulse-ring"><span class="pulse-dot"></span></span>
+          <span class="live-text">Live</span>
+        </div>
+        <div class="time-display">
+          <span class="time-label">Last sync</span>
+          <span class="time-value" id="last-sync">--:--:--</span>
+        </div>
+        <div class="weather-chip">🌤️ <span id="ambient-temp">28°C</span> · Bengaluru</div>
+        <button class="export-btn" onclick="exportCSV()">⬇ Export CSV</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ░░░ ALERT RIBBON ░░░ -->
+  <div class="alert-ribbon">
+    <div class="alert-ribbon-inner">
+      <span class="alert-ribbon-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+          <line x1="12" y1="9" x2="12" y2="13" />
+          <line x1="12" y1="17" x2="12.01" y2="17" />
+        </svg>
+        Alerts
+      </span>
+      <div class="alert-chips" id="alert-chips">
+        <span class="chip chip-ok">✓ All plants healthy</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ░░░ MAIN ░░░ -->
+  <main class="main">
+
+    <!-- Stats Summary Row -->
+    <section class="stats-row">
+      <div class="stat-pill">
+        <span class="stat-icon">🪴</span>
+        <div><span class="stat-num" id="stat-plants">10</span><span class="stat-lbl">Plants</span></div>
+      </div>
+      <div class="stat-pill">
+        <span class="stat-icon">📡</span>
+        <div><span class="stat-num">60</span><span class="stat-lbl">Sensors</span></div>
+      </div>
+      <div class="stat-pill">
+        <span class="stat-icon">⚠️</span>
+        <div><span class="stat-num" id="stat-alerts">0</span><span class="stat-lbl">Alerts</span></div>
+      </div>
+      <div class="stat-pill">
+        <span class="stat-icon">💚</span>
+        <div><span class="stat-num" id="stat-avg-health">—</span><span class="stat-lbl">Avg Health</span></div>
+      </div>
+      <div class="stat-pill">
+        <span class="stat-icon">💧</span>
+        <div><span class="stat-num" id="stat-watered">0</span><span class="stat-lbl">Watered Today</span></div>
+      </div>
+    </section>
+
+    <!-- ── PLANT CARDS ── -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Monitored Plants</h2>
+        <span class="section-hint">Click to inspect sensors · 💧 Water Now · 🌿 Care Tips</span>
+      </div>
+      <div class="plants-grid" id="plants-grid">
+        <!-- injected by script.js -->
+      </div>
+    </section>
+
+    <!-- ── SENSOR DASHBOARD ── -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Live Sensors</h2>
+        <div class="selected-plant-badge" id="selected-badge">
+          <span id="selected-plant-emoji">🌿</span>
+          <span id="selected-plant-name">Tulsi</span>
+        </div>
+      </div>
+      <div class="sensors-grid" id="sensors-grid">
+        <!-- injected by script.js -->
+      </div>
+    </section>
+
+    <!-- ── CHARTS ── -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Analytics</h2>
+      </div>
+      <div class="charts-layout">
+
+        <!-- Line History Chart -->
+        <div class="chart-card chart-large">
+          <div class="chart-card-header">
+            <div>
+              <h3 class="chart-title">Sensor History</h3>
+              <p class="chart-subtitle">Live readings — refreshes every 5 seconds</p>
+            </div>
+            <div class="chart-legend" id="history-legend"></div>
+          </div>
+          <div class="chart-canvas-wrap">
+            <canvas id="historyChart" role="img" aria-label="Sensor history line chart"></canvas>
+          </div>
+        </div>
+
+        <!-- Right column -->
+        <div class="charts-right-col">
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <div>
+                <h3 class="chart-title">Health Scores</h3>
+                <p class="chart-subtitle">All plants</p>
+              </div>
+            </div>
+            <div class="chart-canvas-wrap" style="height:200px">
+              <canvas id="healthChart" role="img" aria-label="Plant health bar chart"></canvas>
+            </div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <div>
+                <h3 class="chart-title">Sensor Status</h3>
+                <p class="chart-subtitle">System overview</p>
+              </div>
+            </div>
+            <div class="chart-canvas-wrap" style="height:200px">
+              <canvas id="statusChart" role="img" aria-label="Sensor status donut chart"></canvas>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- ── EVENT LOG ── -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Event Log</h2>
+        <button class="clear-log-btn" onclick="clearLog()">Clear</button>
+      </div>
+      <div class="log-card">
+        <ul class="log-list" id="event-log" aria-label="Plant monitoring event log">
+          <li class="log-empty">Initialising sensors…</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span>VanaRaksha v3.0</span><span class="footer-sep">·</span>
+    <span>IoT Plant Monitoring</span><span class="footer-sep">·</span>
+    <span>Data simulated</span><span class="footer-sep">·</span>
+    <span>🇮🇳 Indian Flora Edition — 10 Plants</span>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+  <script src="nav.js"></script>
+</body>
+
+</html>

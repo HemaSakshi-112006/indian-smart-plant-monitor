@@ -1,0 +1,384 @@
+ *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    :root {
+      --gd: #1a3a2a;
+      --gm: #2d6a4f;
+      --gs: #52b788;
+      --cream: #faf8f2;
+      --td: #1c2e22;
+      --tm: #4a6356;
+      --ts: #7a9a85
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--cream);
+      color: var(--td);
+      min-height: 100vh;
+      overflow-x: hidden
+    }
+
+    .bg-mandala {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden
+    }
+
+    .mandala-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(82, 183, 136, .07);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%)
+    }
+
+    .ring-1 {
+      width: 600px;
+      height: 600px;
+      animation: rot 60s linear infinite
+    }
+
+    .ring-2 {
+      width: 1000px;
+      height: 1000px;
+      animation: rot 90s linear infinite reverse
+    }
+
+    @keyframes rot {
+      to {
+        transform: translate(-50%, -50%) rotate(360deg)
+      }
+    }
+
+    /* HEADER */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(26, 58, 42, .97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(82, 183, 136, .18);
+      box-shadow: 0 6px 24px rgba(26, 58, 42, .12)
+    }
+
+    .header-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none
+    }
+
+    .brand-leaf {
+      width: 36px;
+      height: 36px;
+      color: #52b788;
+      flex-shrink: 0
+    }
+
+    .brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: .02em;
+      line-height: 1
+    }
+
+    .brand-sub {
+      font-size: .65rem;
+      color: rgba(255, 255, 255, .45);
+      letter-spacing: .08em;
+      margin-top: 2px;
+      display: block
+    }
+
+    .page-tag {
+      background: rgba(82, 183, 136, .15);
+      border: 1px solid rgba(82, 183, 136, .3);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: .72rem;
+      color: #52b788;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase
+    }
+
+    /* MAIN */
+    .main {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+      position: relative;
+      z-index: 1
+    }
+
+    .page-hero {
+      text-align: center;
+      margin-bottom: 48px
+    }
+
+    .page-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 600;
+      color: var(--gd);
+      margin-bottom: 10px
+    }
+
+    .page-hero p {
+      font-size: 1rem;
+      color: var(--tm);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.6
+    }
+
+    /* PLANT CARDS */
+    .lib-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px
+    }
+
+    .lib-card {
+      background: #fff;
+      border-radius: 20px;
+      border: 1px solid rgba(26, 58, 42, .07);
+      box-shadow: 0 2px 12px rgba(26, 58, 42, .06);
+      overflow: hidden;
+      transition: transform .25s, box-shadow .25s;
+      animation: fadeUp .4s ease both
+    }
+
+    .lib-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 40px rgba(26, 58, 42, .1)
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    .lib-card-top {
+      height: 5px;
+      width: 100%
+    }
+
+    .lib-card-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      background: linear-gradient(135deg, #d8f3dc, #b7e4c7)
+    }
+
+    .lib-card-img-placeholder {
+      width: 100%;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4.5rem;
+      background: linear-gradient(135deg, var(--img-bg, #d8f3dc), var(--img-bg2, #b7e4c7))
+    }
+
+    .lib-body {
+      padding: 20px
+    }
+
+    .lib-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 14px
+    }
+
+    .lib-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--gd);
+      line-height: 1.1
+    }
+
+    .lib-hindi {
+      font-size: .85rem;
+      color: var(--ts);
+      margin-top: 2px;
+      display: block
+    }
+
+    .lib-species {
+      font-size: .68rem;
+      color: var(--ts);
+      font-style: italic;
+      margin-top: 3px;
+      display: block
+    }
+
+    .lib-emoji-badge {
+      font-size: 1.8rem;
+      flex-shrink: 0
+    }
+
+    .lib-section {
+      margin-bottom: 14px
+    }
+
+    .lib-section-title {
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--gs);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px
+    }
+
+    .lib-text {
+      font-size: .8rem;
+      color: var(--tm);
+      line-height: 1.55
+    }
+
+    .lib-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px
+    }
+
+    .lib-pill {
+      font-size: .7rem;
+      padding: 4px 10px;
+      border-radius: 10px;
+      font-weight: 500
+    }
+
+    .pill-blue {
+      background: #e3f2fd;
+      color: #1565c0
+    }
+
+    .pill-green {
+      background: #e8f5e9;
+      color: #2e7d32
+    }
+
+    .pill-amber {
+      background: #fff8e1;
+      color: #e65100
+    }
+
+    .pill-purple {
+      background: #f3e5f5;
+      color: #6a1b9a
+    }
+
+    .pill-rose {
+      background: #fce8ef;
+      color: #ad1457
+    }
+
+    .lib-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 6px
+    }
+
+    .lib-metric {
+      background: rgba(26, 58, 42, .03);
+      border-radius: 10px;
+      padding: 8px 10px;
+      text-align: center
+    }
+
+    .lib-metric-icon {
+      font-size: .9rem;
+      display: block
+    }
+
+    .lib-metric-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .78rem;
+      font-weight: 500;
+      color: var(--td);
+      display: block
+    }
+
+    .lib-metric-lbl {
+      font-size: .6rem;
+      color: var(--ts);
+      text-transform: uppercase;
+      letter-spacing: .05em
+    }
+
+    .img-url-note {
+      font-size: .65rem;
+      color: var(--ts);
+      margin-top: 6px;
+      font-style: italic;
+      display: flex;
+      align-items: center;
+      gap: 4px
+    }
+
+    .img-url-note a {
+      color: var(--gs);
+      text-decoration: underline dotted
+    }
+
+    footer {
+      text-align: center;
+      font-size: .72rem;
+      color: var(--ts);
+      padding: 20px 24px 32px;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap
+    }
+
+    .sep {
+      opacity: .4
+    }

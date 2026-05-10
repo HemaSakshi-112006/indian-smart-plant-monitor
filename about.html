@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>VanaRaksha — About</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="nav.css" />
+  <link rel="stylesheet" href="about.css" />
+</head>
+
+<body>
+  <div class="bg-mandala" aria-hidden="true">
+    <div class="mandala-ring ring-1"></div>
+    <div class="mandala-ring ring-2"></div>
+  </div>
+  <div class="nav-overlay" id="nav-overlay"></div>
+  <nav class="side-nav" id="side-nav">
+    <div class="side-nav-header">
+      <svg class="side-nav-logo" viewBox="0 0 40 40" fill="none">
+        <path d="M20 4 C20 4, 36 10, 36 24 C36 32, 28 36, 20 36 C12 36, 4 32, 4 24 C4 10, 20 4 20 4Z"
+          fill="currentColor" opacity=".9" />
+        <path d="M20 36 L20 14" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+      </svg>
+      <div>
+        <div class="side-nav-brand">VanaRaksha</div><span class="side-nav-sub">वन रक्षा · Smart Plant
+          Intelligence</span>
+      </div>
+    </div>
+    <div class="side-nav-links">
+      <span class="nav-section-label">Navigate</span>
+      <a class="nav-link" href="home.html"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></a>
+      <a class="nav-link" href="index.html"><span class="nav-icon">📡</span><span
+          class="nav-label">Dashboard</span><span class="nav-badge">LIVE</span></a>
+      <a class="nav-link" href="library.html"><span class="nav-icon">🌿</span><span class="nav-label">Plant
+          Library</span></a>
+      <a class="nav-link active" href="about.html"><span class="nav-icon">ℹ️</span><span class="nav-label">About
+          Project</span></a>
+    </div>
+    <div class="side-nav-footer">
+      <div class="nav-version">VanaRaksha v3.0</div>
+      <div class="nav-flag">🇮🇳 Indian Flora Edition</div>
+    </div>
+  </nav>
+  <button class="nav-toggle" id="nav-toggle"
+    aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+
+  <header class="header">
+    <div class="header-inner">
+      <a class="brand" href="home.html">
+        <svg class="brand-leaf" viewBox="0 0 40 40" fill="none">
+          <path d="M20 4 C20 4, 36 10, 36 24 C36 32, 28 36, 20 36 C12 36, 4 32, 4 24 C4 10, 20 4 20 4Z"
+            fill="currentColor" opacity=".9" />
+          <path d="M20 36 L20 14" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+        </svg>
+        <div>
+          <div class="brand-name">VanaRaksha</div><span class="brand-sub">वन रक्षा · Smart Plant Intelligence</span>
+        </div>
+      </a>
+      <span class="page-tag">ℹ️ About</span>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="page-hero">
+      <h1>About VanaRaksha</h1>
+      <p>An IoT-powered smart plant intelligence system honouring India's botanical heritage through real-time sensor
+        monitoring and data analytics.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">🌱 Project Overview</h2>
+      <div class="card">
+        <p>VanaRaksha (वन रक्षा — "Guardian of the Forest") is an academic IoT project that combines hardware sensor
+          simulation, real-time data visualisation, and botanical knowledge into a single unified dashboard.</p>
+        <p style="margin-top:12px">The system monitors <strong>10 culturally significant Indian plants</strong> across
+          <strong>6 environmental parameters</strong>, generating live alerts, health scores, and care recommendations —
+          all in a browser-based dashboard requiring zero installation.
+        </p>
+        <div class="highlight">"Technology as a bridge between ancient botanical wisdom and modern data intelligence."
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">📊 System Scale</h2>
+      <div class="plant-count-row">
+        <div class="pc"><span class="pc-num">10</span><span class="pc-lbl">Plants Monitored</span></div>
+        <div class="pc"><span class="pc-num">60</span><span class="pc-lbl">Virtual Sensors</span></div>
+        <div class="pc"><span class="pc-num">6</span><span class="pc-lbl">Parameters</span></div>
+        <div class="pc"><span class="pc-num">5s</span><span class="pc-lbl">Refresh Interval</span></div>
+        <div class="pc"><span class="pc-num">3</span><span class="pc-lbl">Live Charts</span></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">🔬 Monitored Parameters</h2>
+      <div class="card">
+        <ul>
+          <li><strong>💧 Soil Moisture (%)</strong> — critical for plant hydration and root health</li>
+          <li><strong>🌡️ Temperature (°C)</strong> — ambient and root-zone thermal monitoring</li>
+          <li><strong>🌫️ Air Humidity (%)</strong> — leaf transpiration and disease prevention</li>
+          <li><strong>☀️ Light (Lux)</strong> — photosynthesis rate and growth optimisation</li>
+          <li><strong>⚗️ Soil pH</strong> — nutrient availability and root uptake efficiency</li>
+          <li><strong>🪣 Water Level (%)</strong> — irrigation tank and reservoir monitoring</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">⚙️ Technology Stack</h2>
+      <div class="tech-grid">
+        <div class="tech-pill"><span class="t-icon">🌐</span>
+          <div class="t-name">HTML5</div>
+          <div class="t-desc">Semantic structure</div>
+        </div>
+        <div class="tech-pill"><span class="t-icon">🎨</span>
+          <div class="t-name">CSS3</div>
+          <div class="t-desc">Animations & layout</div>
+        </div>
+        <div class="tech-pill"><span class="t-icon">⚡</span>
+          <div class="t-name">Vanilla JS</div>
+          <div class="t-desc">Simulation engine</div>
+        </div>
+        <div class="tech-pill"><span class="t-icon">📈</span>
+          <div class="t-name">Chart.js 4</div>
+          <div class="t-desc">Live data charts</div>
+        </div>
+        <div class="tech-pill"><span class="t-icon">🔤</span>
+          <div class="t-name">Google Fonts</div>
+          <div class="t-desc">Outfit · Cormorant</div>
+        </div>
+        <div class="tech-pill"><span class="t-icon">📡</span>
+          <div class="t-name">IoT Simulator</div>
+          <div class="t-desc">Stochastic data engine</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">🏛️ Design Philosophy</h2>
+      <div class="card">
+        <p>The visual identity draws from India's natural colour palette — deep forest greens, warm creams, and golden
+          accents — combined with Cormorant Garamond (an elegant serif) for botanical authenticity. Mandala-inspired
+          rotating rings in the background pay homage to India's geometric art traditions.</p>
+        <p style="margin-top:12px">Every design decision balances <strong>cultural resonance</strong> with
+          <strong>modern usability</strong> — making the dashboard feel like a premium product while remaining
+          accessible and performant on any device.
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">🌿 Plant Selection Rationale</h2>
+      <div class="card">
+        <p>The 10 plants were selected to represent a breadth of Indian flora — from sacred Vedic plants (Tulsi, Lotus)
+          to culinary staples (Curry Leaf), medicinal giants (Neem, Aloe Vera), ornamentals (Rose, Mogra), and modern
+          indoor favourites (Snake Plant, Money Plant, Spider Plant). Each has distinct environmental requirements,
+          making them ideal for demonstrating diverse sensor profiles.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <span>VanaRaksha v3.0</span><span class="sep">·</span>
+    <span>About</span><span class="sep">·</span>
+    <span>🇮🇳 Indian Flora Edition — 10 Plants</span>
+  </footer>
+
+  <script src="nav.js"></script>
+</body>
+
+</html>
