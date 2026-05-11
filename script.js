@@ -14,23 +14,23 @@ const PLANTS = [
     emoji: '🌿', location: 'Pooja Room · Balcony', accent: '#3a8c5e', bg: '#e8f5ed',
     desc: 'Sacred Holy Basil — revered in Indian homes',
     thresholds: {
-      moisture:    { min: 35,  max: 70,   ideal: [45, 65] },
-      temperature: { min: 18,  max: 35,   ideal: [20, 30] },
-      humidity:    { min: 40,  max: 75,   ideal: [50, 70] },
-      light:       { min: 200, max: 900,  ideal: [400, 700] },
-      ph:          { min: 5.5, max: 7.5,  ideal: [6.0, 7.0] },
-      water:       { min: 20,  max: 100,  ideal: [40, 90] }
+      moisture: { min: 35, max: 70, ideal: [45, 65] },
+      temperature: { min: 18, max: 35, ideal: [20, 30] },
+      humidity: { min: 40, max: 75, ideal: [50, 70] },
+      light: { min: 200, max: 900, ideal: [400, 700] },
+      ph: { min: 5.5, max: 7.5, ideal: [6.0, 7.0] },
+      water: { min: 20, max: 100, ideal: [40, 90] }
     },
     base: { moisture: 30, temperature: 26, humidity: 62, light: 520, ph: 6.5, water: 74 },
     tips: {
       watering: 'Water every 2–3 days in summer, reduce in winter. Keep soil moist but not waterlogged.',
       sunlight: 'Needs 4–6 hours of direct morning sunlight. South or east facing window ideal.',
-      soil:     'Well-draining loamy soil with pH 6–7. Add sand or perlite for drainage.',
+      soil: 'Well-draining loamy soil with pH 6–7. Add sand or perlite for drainage.',
       bestTime: '🌅 Best watered early morning (6–8 AM) to prevent fungal diseases.',
       seasons: {
-        summer:  'Water daily, provide afternoon shade above 38°C.',
+        summer: 'Water daily, provide afternoon shade above 38°C.',
         monsoon: 'Reduce watering drastically. Ensure drainage holes are clear.',
-        winter:  'Water every 4–5 days. Protect from cold winds below 10°C.'
+        winter: 'Water every 4–5 days. Protect from cold winds below 10°C.'
       }
     }
   },
@@ -39,23 +39,23 @@ const PLANTS = [
     emoji: '🌳', location: 'Garden · Open Sun', accent: '#4a7c2e', bg: '#eaf3e0',
     desc: 'Village Pharmacy — natural insect repellent',
     thresholds: {
-      moisture:    { min: 20,  max: 55,   ideal: [28, 45] },
-      temperature: { min: 15,  max: 45,   ideal: [25, 38] },
-      humidity:    { min: 30,  max: 70,   ideal: [40, 60] },
-      light:       { min: 500, max: 1400, ideal: [800, 1200] },
-      ph:          { min: 6.0, max: 8.5,  ideal: [7.0, 8.0] },
-      water:       { min: 15,  max: 100,  ideal: [30, 80] }
+      moisture: { min: 20, max: 55, ideal: [28, 45] },
+      temperature: { min: 15, max: 45, ideal: [25, 38] },
+      humidity: { min: 30, max: 70, ideal: [40, 60] },
+      light: { min: 500, max: 1400, ideal: [800, 1200] },
+      ph: { min: 6.0, max: 8.5, ideal: [7.0, 8.0] },
+      water: { min: 15, max: 100, ideal: [30, 80] }
     },
     base: { moisture: 36, temperature: 33, humidity: 48, light: 980, ph: 7.4, water: 58 },
     tips: {
       watering: 'Drought-tolerant once established. Water deeply once a week; twice in peak summer.',
       sunlight: 'Full sun — needs 6+ hours. Thrives in intense Indian sun, struggles in shade.',
-      soil:     'Sandy or loamy, slightly alkaline soil (pH 7–8). Excellent drainage essential.',
+      soil: 'Sandy or loamy, slightly alkaline soil (pH 7–8). Excellent drainage essential.',
       bestTime: '🌄 Water in the evening when sun is down to minimise evaporation.',
       seasons: {
-        summer:  'Water twice weekly. Mulch around roots to retain moisture.',
+        summer: 'Water twice weekly. Mulch around roots to retain moisture.',
         monsoon: 'No extra watering needed. Watch for root rot in clay soils.',
-        winter:  'Water monthly only. Neem is semi-deciduous — leaf drop is normal.'
+        winter: 'Water monthly only. Neem is semi-deciduous — leaf drop is normal.'
       }
     }
   },
@@ -64,23 +64,23 @@ const PLANTS = [
     emoji: '🍃', location: 'Kitchen Garden · East', accent: '#7ab02a', bg: '#f0f7e0',
     desc: 'Kadi Patta — essential South Indian herb',
     thresholds: {
-      moisture:    { min: 30,  max: 65,   ideal: [40, 60] },
-      temperature: { min: 16,  max: 38,   ideal: [22, 32] },
-      humidity:    { min: 45,  max: 80,   ideal: [55, 72] },
-      light:       { min: 300, max: 1000, ideal: [500, 800] },
-      ph:          { min: 6.0, max: 7.5,  ideal: [6.4, 7.0] },
-      water:       { min: 20,  max: 100,  ideal: [40, 85] }
+      moisture: { min: 30, max: 65, ideal: [40, 60] },
+      temperature: { min: 16, max: 38, ideal: [22, 32] },
+      humidity: { min: 45, max: 80, ideal: [55, 72] },
+      light: { min: 300, max: 1000, ideal: [500, 800] },
+      ph: { min: 6.0, max: 7.5, ideal: [6.4, 7.0] },
+      water: { min: 20, max: 100, ideal: [40, 85] }
     },
     base: { moisture: 50, temperature: 28, humidity: 64, light: 640, ph: 6.7, water: 65 },
     tips: {
       watering: 'Keep soil evenly moist. Water when top 2 cm of soil feels dry — roughly every 2 days.',
       sunlight: 'Bright indirect to partial sun. East-facing balcony or kitchen window is perfect.',
-      soil:     'Rich, well-draining mix with compost. Slightly acidic to neutral pH preferred.',
+      soil: 'Rich, well-draining mix with compost. Slightly acidic to neutral pH preferred.',
       bestTime: '🌅 Morning watering (7–9 AM) keeps leaves fresh for day-long harvest.',
       seasons: {
-        summer:  'Water daily, mist leaves to boost humidity. Harvest leaves to encourage bushiness.',
+        summer: 'Water daily, mist leaves to boost humidity. Harvest leaves to encourage bushiness.',
         monsoon: 'Reduce watering. Watch for yellow leaves indicating waterlogging.',
-        winter:  'Water every 3 days. Bring indoors if temperature drops below 10°C.'
+        winter: 'Water every 3 days. Bring indoors if temperature drops below 10°C.'
       }
     }
   },
@@ -89,23 +89,23 @@ const PLANTS = [
     emoji: '🪷', location: 'Pond · Open Water', accent: '#d4607e', bg: '#fce8ef',
     desc: 'National Flower of India — sacred water plant',
     thresholds: {
-      moisture:    { min: 80,  max: 100,  ideal: [90, 100] },
-      temperature: { min: 20,  max: 38,   ideal: [25, 34] },
-      humidity:    { min: 60,  max: 95,   ideal: [70, 88] },
-      light:       { min: 400, max: 1200, ideal: [700, 1100] },
-      ph:          { min: 6.5, max: 8.0,  ideal: [7.0, 7.8] },
-      water:       { min: 70,  max: 100,  ideal: [85, 100] }
+      moisture: { min: 80, max: 100, ideal: [90, 100] },
+      temperature: { min: 20, max: 38, ideal: [25, 34] },
+      humidity: { min: 60, max: 95, ideal: [70, 88] },
+      light: { min: 400, max: 1200, ideal: [700, 1100] },
+      ph: { min: 6.5, max: 8.0, ideal: [7.0, 7.8] },
+      water: { min: 70, max: 100, ideal: [85, 100] }
     },
     base: { moisture: 95, temperature: 30, humidity: 80, light: 880, ph: 7.3, water: 95 },
     tips: {
       watering: 'Aquatic plant — keep in 15–40 cm of standing water at all times. Top up as water evaporates.',
       sunlight: 'Full sun is mandatory — minimum 6 hours of direct sunlight for blooming.',
-      soil:     'Heavy clay soil or aquatic planting mix. Do NOT use regular potting soil (it floats).',
+      soil: 'Heavy clay soil or aquatic planting mix. Do NOT use regular potting soil (it floats).',
       bestTime: '🌞 Replenish water in the morning. Lotus opens at sunrise and closes by afternoon.',
       seasons: {
-        summer:  "Peak growing season. Ensure water doesn't overheat above 35°C.",
+        summer: "Peak growing season. Ensure water doesn't overheat above 35°C.",
         monsoon: 'Thrives! Protect from overflow and strong winds that may damage flowers.',
-        winter:  'Goes dormant. Reduce water level, protect tubers from frost below 5°C.'
+        winter: 'Goes dormant. Reduce water level, protect tubers from frost below 5°C.'
       }
     }
   },
@@ -114,23 +114,23 @@ const PLANTS = [
     emoji: '🌸', location: 'Terrace · Shade Net', accent: '#c8a000', bg: '#fdf6d9',
     desc: 'Arabian Jasmine — fragrant night bloomer',
     thresholds: {
-      moisture:    { min: 35,  max: 68,  ideal: [45, 62] },
-      temperature: { min: 18,  max: 36,  ideal: [22, 30] },
-      humidity:    { min: 50,  max: 80,  ideal: [58, 74] },
-      light:       { min: 200, max: 800, ideal: [400, 700] },
-      ph:          { min: 6.0, max: 7.5, ideal: [6.5, 7.2] },
-      water:       { min: 20,  max: 100, ideal: [45, 88] }
+      moisture: { min: 35, max: 68, ideal: [45, 62] },
+      temperature: { min: 18, max: 36, ideal: [22, 30] },
+      humidity: { min: 50, max: 80, ideal: [58, 74] },
+      light: { min: 200, max: 800, ideal: [400, 700] },
+      ph: { min: 6.0, max: 7.5, ideal: [6.5, 7.2] },
+      water: { min: 20, max: 100, ideal: [45, 88] }
     },
     base: { moisture: 54, temperature: 27, humidity: 67, light: 560, ph: 6.8, water: 70 },
     tips: {
       watering: 'Keep consistently moist. Water every 2 days; daily in summer. Never let it dry out completely.',
       sunlight: 'Partial sun — 4–6 hours. Harsh afternoon sun can scorch leaves; shade net recommended.',
-      soil:     'Rich, well-draining loam with compost. Mulch to retain moisture.',
+      soil: 'Rich, well-draining loam with compost. Mulch to retain moisture.',
       bestTime: '🌙 Evening watering suits Mogra — blooms at night and needs moisture for flower production.',
       seasons: {
-        summer:  'Water generously, mist flowers in the evening. Deadhead spent blooms.',
+        summer: 'Water generously, mist flowers in the evening. Deadhead spent blooms.',
         monsoon: 'Excellent blooming season. Reduce watering, ensure no waterlogging.',
-        winter:  'Reduce watering significantly. Prune lightly after flowering stops.'
+        winter: 'Reduce watering significantly. Prune lightly after flowering stops.'
       }
     }
   },
@@ -139,23 +139,23 @@ const PLANTS = [
     emoji: '🗡️', location: 'Bedroom · Low Light', accent: '#5a7a3a', bg: '#edf5e0',
     desc: 'Air purifier — tolerates neglect beautifully',
     thresholds: {
-      moisture:    { min: 10, max: 45,  ideal: [15, 35] },
-      temperature: { min: 10, max: 38,  ideal: [18, 30] },
-      humidity:    { min: 20, max: 60,  ideal: [30, 50] },
-      light:       { min: 50, max: 700, ideal: [100, 500] },
-      ph:          { min: 5.5, max: 7.5, ideal: [6.0, 7.0] },
-      water:       { min: 5,  max: 100, ideal: [15, 60] }
+      moisture: { min: 10, max: 45, ideal: [15, 35] },
+      temperature: { min: 10, max: 38, ideal: [18, 30] },
+      humidity: { min: 20, max: 60, ideal: [30, 50] },
+      light: { min: 50, max: 700, ideal: [100, 500] },
+      ph: { min: 5.5, max: 7.5, ideal: [6.0, 7.0] },
+      water: { min: 5, max: 100, ideal: [15, 60] }
     },
     base: { moisture: 22, temperature: 25, humidity: 40, light: 280, ph: 6.4, water: 35 },
     tips: {
       watering: 'Water only when soil is completely dry — every 2–6 weeks. Overwatering is the #1 killer.',
       sunlight: 'Extremely adaptable — thrives in low to bright indirect light. Avoid direct harsh sun.',
-      soil:     'Sandy, well-draining cactus or succulent mix. Excellent for testing moisture sensors (wide dry range).',
+      soil: 'Sandy, well-draining cactus or succulent mix. Excellent for testing moisture sensors (wide dry range).',
       bestTime: '☀️ Water in the morning. Ensure pot drains fully — never let it sit in water.',
       seasons: {
-        summer:  'Water every 2–3 weeks. Can tolerate more light outdoors in shade.',
+        summer: 'Water every 2–3 weeks. Can tolerate more light outdoors in shade.',
         monsoon: 'Water monthly or less. High humidity may cause rot — ensure airflow.',
-        winter:  'Water every 6–8 weeks. Goes semi-dormant. Keep away from cold drafts.'
+        winter: 'Water every 6–8 weeks. Goes semi-dormant. Keep away from cold drafts.'
       }
     }
   },
@@ -164,23 +164,23 @@ const PLANTS = [
     emoji: '💚', location: 'Living Room · Indirect Light', accent: '#2e8b57', bg: '#e0f5ec',
     desc: 'Lucky charm — rapid indoor grower',
     thresholds: {
-      moisture:    { min: 30,  max: 65,  ideal: [40, 58] },
-      temperature: { min: 15,  max: 35,  ideal: [20, 30] },
-      humidity:    { min: 40,  max: 80,  ideal: [50, 70] },
-      light:       { min: 100, max: 800, ideal: [200, 600] },
-      ph:          { min: 6.0, max: 7.5, ideal: [6.0, 6.8] },
-      water:       { min: 20,  max: 100, ideal: [40, 80] }
+      moisture: { min: 30, max: 65, ideal: [40, 58] },
+      temperature: { min: 15, max: 35, ideal: [20, 30] },
+      humidity: { min: 40, max: 80, ideal: [50, 70] },
+      light: { min: 100, max: 800, ideal: [200, 600] },
+      ph: { min: 6.0, max: 7.5, ideal: [6.0, 6.8] },
+      water: { min: 20, max: 100, ideal: [40, 80] }
     },
     base: { moisture: 48, temperature: 26, humidity: 58, light: 380, ph: 6.4, water: 62 },
     tips: {
       watering: 'Water when top 2–3 cm of soil is dry — roughly every 5–7 days. Moderate watering is ideal.',
       sunlight: 'Thrives in indirect bright light. Can grow in low light but variegation may fade.',
-      soil:     'Well-draining potting mix with cocopeat. Can also grow in water jars — ideal for IoT experiments.',
+      soil: 'Well-draining potting mix with cocopeat. Can also grow in water jars — ideal for IoT experiments.',
       bestTime: '🌤️ Water in the morning. Growth is fast — great for tracking progress over days.',
       seasons: {
-        summer:  'Water every 4–5 days. Mist leaves to increase humidity. Fertilise monthly.',
+        summer: 'Water every 4–5 days. Mist leaves to increase humidity. Fertilise monthly.',
         monsoon: 'Grows vigorously! Reduce watering. Pinch tips to control leggy growth.',
-        winter:  'Slow growth phase. Water every 7–10 days. Keep away from AC vents.'
+        winter: 'Slow growth phase. Water every 7–10 days. Keep away from AC vents.'
       }
     }
   },
@@ -189,23 +189,23 @@ const PLANTS = [
     emoji: '🌵', location: 'Sunny Windowsill · South', accent: '#a0b832', bg: '#f4f9e0',
     desc: 'Medicinal succulent — stores water in leaves',
     thresholds: {
-      moisture:    { min: 5,   max: 40,   ideal: [10, 30] },
-      temperature: { min: 10,  max: 42,   ideal: [18, 35] },
-      humidity:    { min: 15,  max: 55,   ideal: [20, 40] },
-      light:       { min: 300, max: 1400, ideal: [600, 1100] },
-      ph:          { min: 6.0, max: 8.0,  ideal: [6.5, 7.5] },
-      water:       { min: 5,   max: 100,  ideal: [15, 50] }
+      moisture: { min: 5, max: 40, ideal: [10, 30] },
+      temperature: { min: 10, max: 42, ideal: [18, 35] },
+      humidity: { min: 15, max: 55, ideal: [20, 40] },
+      light: { min: 300, max: 1400, ideal: [600, 1100] },
+      ph: { min: 6.0, max: 8.0, ideal: [6.5, 7.5] },
+      water: { min: 5, max: 100, ideal: [15, 50] }
     },
     base: { moisture: 18, temperature: 30, humidity: 30, light: 820, ph: 7.0, water: 30 },
     tips: {
       watering: 'Water deeply but infrequently — every 3 weeks in summer, monthly in winter. Soak and dry method.',
       sunlight: 'Loves bright direct sunlight. South-facing window or outdoor terrace is perfect.',
-      soil:     'Gritty succulent/cactus mix with excellent drainage. Terracotta pots work best.',
+      soil: 'Gritty succulent/cactus mix with excellent drainage. Terracotta pots work best.',
       bestTime: '🌞 Water in the morning. Let soil dry completely before the next watering — ideal for dry-sensor testing.',
       seasons: {
-        summer:  'Tolerates heat well. Water every 2 weeks maximum. Watch for sunburn above 45°C.',
+        summer: 'Tolerates heat well. Water every 2 weeks maximum. Watch for sunburn above 45°C.',
         monsoon: 'Danger zone — root rot risk. Move indoors or to covered area. No extra watering.',
-        winter:  'Near dormant. Water only once a month. Cold below 5°C can damage leaves.'
+        winter: 'Near dormant. Water only once a month. Cold below 5°C can damage leaves.'
       }
     }
   },
@@ -214,93 +214,93 @@ const PLANTS = [
     emoji: '🕷️', location: 'Hanging Basket · East Window', accent: '#6aab4e', bg: '#e8f7e0',
     desc: 'Hardy & responsive — ideal for environmental sensing',
     thresholds: {
-      moisture:    { min: 25,  max: 60,  ideal: [35, 55] },
-      temperature: { min: 10,  max: 35,  ideal: [18, 28] },
-      humidity:    { min: 35,  max: 75,  ideal: [45, 65] },
-      light:       { min: 100, max: 700, ideal: [200, 550] },
-      ph:          { min: 6.0, max: 7.2, ideal: [6.0, 6.8] },
-      water:       { min: 20,  max: 100, ideal: [40, 75] }
+      moisture: { min: 25, max: 60, ideal: [35, 55] },
+      temperature: { min: 10, max: 35, ideal: [18, 28] },
+      humidity: { min: 35, max: 75, ideal: [45, 65] },
+      light: { min: 100, max: 700, ideal: [200, 550] },
+      ph: { min: 6.0, max: 7.2, ideal: [6.0, 6.8] },
+      water: { min: 20, max: 100, ideal: [40, 75] }
     },
     base: { moisture: 44, temperature: 24, humidity: 55, light: 340, ph: 6.4, water: 58 },
     tips: {
       watering: 'Water moderately — every 5–7 days. Sensitive to fluoride in tap water; use filtered or rain water.',
       sunlight: 'Thrives in indirect bright light. Variegation is best near east-facing window.',
-      soil:     'Standard well-draining potting mix. Produces "spiderettes" (offshoots) when happy.',
+      soil: 'Standard well-draining potting mix. Produces "spiderettes" (offshoots) when happy.',
       bestTime: '🌅 Morning watering. Extremely responsive to light/humidity changes — great for IoT demos.',
       seasons: {
-        summer:  'Water every 4 days, mist regularly. Brown tips indicate low humidity or fluoride.',
+        summer: 'Water every 4 days, mist regularly. Brown tips indicate low humidity or fluoride.',
         monsoon: 'Grows rapidly! Reduce watering. Repot if roots outgrow container.',
-        winter:  'Slow growth. Water every 10 days. Bring indoors if below 7°C.'
+        winter: 'Slow growth. Water every 10 days. Bring indoors if below 7°C.'
       }
     }
   },
   {
-  id: 'rose',                          // unique ID, no spaces
-  name: 'Rose',                        // display name
-  hindiName: 'गुलाब',                  // Hindi name
-  species: 'Rosa indica',              // scientific name
-  emoji: '🌹',
-  location: 'Front Garden · Morning Sun',
-  accent: '#e05c7a',                   // card colour (hex)
-  bg: '#fce8ef',                       // avatar background
-  desc: 'Classic ornamental flower',
+    id: 'rose',                          // unique ID, no spaces
+    name: 'Rose',                        // display name
+    hindiName: 'गुलाब',                  // Hindi name
+    species: 'Rosa indica',              // scientific name
+    emoji: '🌹',
+    location: 'Front Garden · Morning Sun',
+    accent: '#e05c7a',                   // card colour (hex)
+    bg: '#fce8ef',                       // avatar background
+    desc: 'Classic ornamental flower',
 
-  thresholds: {
-    // For each sensor: min/max = absolute danger limits
-    //                  ideal  = the green "optimal" zone
-    moisture:    { min: 35, max: 70,   ideal: [45, 62] },
-    temperature: { min: 15, max: 38,   ideal: [20, 30] },
-    humidity:    { min: 45, max: 80,   ideal: [55, 72] },
-    light:       { min: 300, max: 1000, ideal: [500, 800] },
-    ph:          { min: 6.0, max: 7.0, ideal: [6.3, 6.8] },
-    water:       { min: 20, max: 100,  ideal: [45, 85] }
-  },
+    thresholds: {
+      // For each sensor: min/max = absolute danger limits
+      //                  ideal  = the green "optimal" zone
+      moisture: { min: 35, max: 70, ideal: [45, 62] },
+      temperature: { min: 15, max: 38, ideal: [20, 30] },
+      humidity: { min: 45, max: 80, ideal: [55, 72] },
+      light: { min: 300, max: 1000, ideal: [500, 800] },
+      ph: { min: 6.0, max: 7.0, ideal: [6.3, 6.8] },
+      water: { min: 20, max: 100, ideal: [45, 85] }
+    },
 
-  // Starting values — should sit inside ideal ranges
-  base: { moisture: 52, temperature: 26, humidity: 64, light: 640, ph: 6.5, water: 68 },
+    // Starting values — should sit inside ideal ranges
+    base: { moisture: 52, temperature: 26, humidity: 64, light: 640, ph: 6.5, water: 68 },
 
-  tips: {
-     watering: 'Water deeply 2–3 times a week. Keep soil moist but not waterlogged. Increase watering during flowering season.',
-  sunlight: 'Needs 6–8 hours of direct sunlight daily for healthy blooms and strong growth.',
-  soil:     'Prefers rich, well-draining soil with compost. Slightly acidic soil works best for roses.',
-  bestTime: '🌅 Early morning watering is ideal. Remove dried flowers regularly to encourage new blooms.',
-  seasons: {
-    summer:  'Water frequently during hot days. Mulching helps retain moisture and protect roots.',
-    monsoon: 'Watch for fungal diseases due to excess moisture. Ensure proper drainage and airflow.',
-    winter:  'Growth slows down. Water less often and prune lightly to prepare for spring flowering.'
+    tips: {
+      watering: 'Water deeply 2–3 times a week. Keep soil moist but not waterlogged. Increase watering during flowering season.',
+      sunlight: 'Needs 6–8 hours of direct sunlight daily for healthy blooms and strong growth.',
+      soil: 'Prefers rich, well-draining soil with compost. Slightly acidic soil works best for roses.',
+      bestTime: '🌅 Early morning watering is ideal. Remove dried flowers regularly to encourage new blooms.',
+      seasons: {
+        summer: 'Water frequently during hot days. Mulching helps retain moisture and protect roots.',
+        monsoon: 'Watch for fungal diseases due to excess moisture. Ensure proper drainage and airflow.',
+        winter: 'Growth slows down. Water less often and prune lightly to prepare for spring flowering.'
+      }
     }
   }
-}
 ];
 
 /* ─────────────────────────────────────────────
    2. SENSOR METADATA
 ───────────────────────────────────────────── */
 const SENSOR_META = {
-  moisture:    { label: 'Soil Moisture', icon: '💧', unit: '%',   absMin: 0,  absMax: 100,  color: '#2196F3', bgColor: '#e3f2fd' },
-  temperature: { label: 'Temperature',   icon: '🌡️', unit: '°C',  absMin: 0,  absMax: 50,   color: '#ff7043', bgColor: '#fbe9e7' },
-  humidity:    { label: 'Air Humidity',  icon: '🌫️', unit: '%',   absMin: 0,  absMax: 100,  color: '#00bcd4', bgColor: '#e0f7fa' },
-  light:       { label: 'Light (Lux)',   icon: '☀️', unit: 'lux', absMin: 0,  absMax: 1500, color: '#ffc107', bgColor: '#fff8e1' },
-  ph:          { label: 'Soil pH',       icon: '⚗️', unit: '',    absMin: 4,  absMax: 9,    color: '#9c27b0', bgColor: '#f3e5f5' },
-  water:       { label: 'Water Level',   icon: '🪣', unit: '%',   absMin: 0,  absMax: 100,  color: '#4caf50', bgColor: '#e8f5e9' }
+  moisture: { label: 'Soil Moisture', icon: '💧', unit: '%', absMin: 0, absMax: 100, color: '#2196F3', bgColor: '#e3f2fd' },
+  temperature: { label: 'Temperature', icon: '🌡️', unit: '°C', absMin: 0, absMax: 50, color: '#ff7043', bgColor: '#fbe9e7' },
+  humidity: { label: 'Air Humidity', icon: '🌫️', unit: '%', absMin: 0, absMax: 100, color: '#00bcd4', bgColor: '#e0f7fa' },
+  light: { label: 'Light (Lux)', icon: '☀️', unit: 'lux', absMin: 0, absMax: 1500, color: '#ffc107', bgColor: '#fff8e1' },
+  ph: { label: 'Soil pH', icon: '⚗️', unit: '', absMin: 4, absMax: 9, color: '#9c27b0', bgColor: '#f3e5f5' },
+  water: { label: 'Water Level', icon: '🪣', unit: '%', absMin: 0, absMax: 100, color: '#4caf50', bgColor: '#e8f5e9' }
 };
 
 /* ─────────────────────────────────────────────
    3. APPLICATION STATE
 ───────────────────────────────────────────── */
-let sensorState   = {};
+let sensorState = {};
 let sensorHistory = {};
-let selectedId    = PLANTS[0].id;
-let historyChart  = null;
-let healthChart   = null;
-let statusChart   = null;
-let eventLog      = [];
-let alertTracker  = {};
-let openTips      = {};
-let wateredToday  = 0;
+let selectedId = PLANTS[0].id;
+let historyChart = null;
+let healthChart = null;
+let statusChart = null;
+let eventLog = [];
+let alertTracker = {};
+let openTips = {};
+let wateredToday = 0;
 
 const MAX_HISTORY = 20;
-const TICK_MS     = 5000;
+const TICK_MS = 5000;
 
 const JITTER = {
   moisture: 1.8, temperature: 0.35, humidity: 1.4,
@@ -312,13 +312,13 @@ const JITTER = {
 ───────────────────────────────────────────── */
 function initState() {
   PLANTS.forEach(p => {
-    sensorState[p.id]   = { ...p.base };
-    alertTracker[p.id]  = {};
+    sensorState[p.id] = { ...p.base };
+    alertTracker[p.id] = {};
     sensorHistory[p.id] = { labels: [] };
-    openTips[p.id]      = false;
+    openTips[p.id] = false;
     Object.keys(SENSOR_META).forEach(k => {
       sensorHistory[p.id][k] = [];
-      alertTracker[p.id][k]  = 'ok';
+      alertTracker[p.id][k] = 'ok';
     });
   });
 }
@@ -328,14 +328,14 @@ function initState() {
 ───────────────────────────────────────────── */
 function simulate(plantId) {
   const plant = PLANTS.find(p => p.id === plantId);
-  const s     = sensorState[plantId];
+  const s = sensorState[plantId];
 
   Object.keys(SENSOR_META).forEach(k => {
     const jitter = (Math.random() - 0.5) * 2 * (JITTER[k] || 1);
     s[k] += jitter;
 
     // Drift toward ideal centre
-    const ideal  = plant.thresholds[k].ideal;
+    const ideal = plant.thresholds[k].ideal;
     const centre = (ideal[0] + ideal[1]) / 2;
     s[k] += (centre - s[k]) * 0.015;
 
@@ -345,7 +345,7 @@ function simulate(plantId) {
   });
 
   // Natural depletion
-  s.water    = Math.max(0, s.water - Math.random() * 0.25);
+  s.water = Math.max(0, s.water - Math.random() * 0.25);
   s.moisture = Math.max(
     plant.thresholds.moisture.min - 5,
     s.moisture - Math.random() * 0.35
@@ -373,8 +373,8 @@ function pushHistory(plantId) {
 ───────────────────────────────────────────── */
 function calcHealth(plantId) {
   const plant = PLANTS.find(p => p.id === plantId);
-  const s     = sensorState[plantId];
-  let score   = 100;
+  const s = sensorState[plantId];
+  let score = 100;
 
   Object.keys(SENSOR_META).forEach(k => {
     const { ideal, min, max } = plant.thresholds[k];
@@ -387,10 +387,10 @@ function calcHealth(plantId) {
 }
 
 function healthLabel(score) {
-  if (score >= 85) return { text: 'Thriving',  cls: 'badge-great' };
-  if (score >= 65) return { text: 'Stable',    cls: 'badge-good' };
+  if (score >= 85) return { text: 'Thriving', cls: 'badge-great' };
+  if (score >= 65) return { text: 'Stable', cls: 'badge-good' };
   if (score >= 45) return { text: 'Attention', cls: 'badge-warn' };
-  return              { text: 'Critical',  cls: 'badge-danger' };
+  return { text: 'Critical', cls: 'badge-danger' };
 }
 
 function healthColor(score) {
@@ -402,7 +402,7 @@ function healthColor(score) {
 
 function sensorStatus(val, thresholds) {
   const { min, max, ideal } = thresholds;
-  if (val <= min || val >= max)          return 'danger';
+  if (val <= min || val >= max) return 'danger';
   if (val < ideal[0] || val > ideal[1]) return 'warn';
   return 'ok';
 }
@@ -419,7 +419,7 @@ function trendArrow(plantId, sensor) {
     moisture: 0.5, temperature: 0.15, humidity: 0.5,
     light: 15, ph: 0.02, water: 0.2
   }[sensor] || 0.3;
-  if (delta >  thr) return '↗';
+  if (delta > thr) return '↗';
   if (delta < -thr) return '↘';
   return '→';
 }
@@ -436,9 +436,9 @@ function formatVal(key, val) {
 function waterPlant(event, plantId) {
   event.stopPropagation();
   const plant = PLANTS.find(p => p.id === plantId);
-  const s     = sensorState[plantId];
+  const s = sensorState[plantId];
 
-  s.water    = 100;
+  s.water = 100;
   s.moisture = plant.thresholds.moisture.ideal[1];
 
   wateredToday++;
@@ -486,12 +486,12 @@ function renderPlantCards() {
   const grid = document.getElementById('plants-grid');
 
   grid.innerHTML = PLANTS.map((p, i) => {
-    const s      = sensorState[p.id];
+    const s = sensorState[p.id];
     const health = calcHealth(p.id);
     const { text, cls } = healthLabel(health);
-    const hColor   = healthColor(health);
+    const hColor = healthColor(health);
     const isActive = p.id === selectedId;
-    const tips     = p.tips;
+    const tips = p.tips;
 
     return `
     <div class="plant-card ${isActive ? 'active' : ''}"
@@ -611,26 +611,26 @@ function renderPlantCards() {
 ───────────────────────────────────────────── */
 function renderSensors() {
   const plant = PLANTS.find(p => p.id === selectedId);
-  const s     = sensorState[selectedId];
+  const s = sensorState[selectedId];
 
   document.getElementById('selected-plant-emoji').textContent = plant.emoji;
-  document.getElementById('selected-plant-name').textContent  = plant.name;
+  document.getElementById('selected-plant-name').textContent = plant.name;
 
   document.getElementById('sensors-grid').innerHTML =
     Object.entries(SENSOR_META).map(([key, meta]) => {
-      const val    = s[key];
-      const t      = plant.thresholds[key];
+      const val = s[key];
+      const t = plant.thresholds[key];
       const status = sensorStatus(val, t);
       const sColor = statusColor(status);
-      const arrow  = trendArrow(selectedId, key);
+      const arrow = trendArrow(selectedId, key);
 
-      const range       = meta.absMax - meta.absMin;
-      const fillPct     = Math.min(100, Math.max(0, ((val - meta.absMin) / range) * 100));
-      const idealLoPct  = ((t.ideal[0] - meta.absMin) / range) * 100;
-      const idealHiPct  = ((t.ideal[1] - meta.absMin) / range) * 100;
-      const idealWidth  = idealHiPct - idealLoPct;
+      const range = meta.absMax - meta.absMin;
+      const fillPct = Math.min(100, Math.max(0, ((val - meta.absMin) / range) * 100));
+      const idealLoPct = ((t.ideal[0] - meta.absMin) / range) * 100;
+      const idealHiPct = ((t.ideal[1] - meta.absMin) / range) * 100;
+      const idealWidth = idealHiPct - idealLoPct;
 
-      const statusLabels     = { ok: 'Optimal', warn: 'Out of range', danger: 'Critical' };
+      const statusLabels = { ok: 'Optimal', warn: 'Out of range', danger: 'Critical' };
       const statusTextColors = { ok: '#16a34a', warn: '#d97706', danger: '#dc2626' };
 
       return `
@@ -678,8 +678,8 @@ function renderSensors() {
    11. ALERT SYSTEM
 ───────────────────────────────────────────── */
 function processAlerts() {
-  const chips     = [];
-  let alertCount  = 0;
+  const chips = [];
+  let alertCount = 0;
 
   PLANTS.forEach(p => {
     const s = sensorState[p.id];
@@ -720,7 +720,7 @@ function processAlerts() {
 ───────────────────────────────────────────── */
 function updateStats() {
   const scores = PLANTS.map(p => calcHealth(p.id));
-  const avg    = Math.round(scores.reduce((a, b) => a + b, 0) / scores.length);
+  const avg = Math.round(scores.reduce((a, b) => a + b, 0) / scores.length);
   document.getElementById('stat-avg-health').textContent = avg + '%';
 }
 
@@ -777,7 +777,7 @@ function initCharts() {
           mode: 'index', intersect: false,
           backgroundColor: 'rgba(27,58,45,0.92)',
           titleFont: { family: 'Outfit', size: 11 },
-          bodyFont:  { family: 'JetBrains Mono', size: 12 },
+          bodyFont: { family: 'JetBrains Mono', size: 12 },
           padding: 10
         }
       },
@@ -836,7 +836,7 @@ function initCharts() {
       datasets: [{
         data: [0, 0, 0],
         backgroundColor: ['#22c55ecc', '#f59e0bcc', '#ef4444cc'],
-        borderColor:     ['#22c55e',   '#f59e0b',   '#ef4444'],
+        borderColor: ['#22c55e', '#f59e0b', '#ef4444'],
         borderWidth: 2, hoverOffset: 6
       }]
     },
@@ -858,7 +858,7 @@ function initCharts() {
 
 function updateHistoryChart() {
   const h = sensorHistory[selectedId];
-  historyChart.data.labels           = [...h.labels];
+  historyChart.data.labels = [...h.labels];
   historyChart.data.datasets[0].data = [...h.moisture];
   historyChart.data.datasets[1].data = [...h.temperature];
   historyChart.data.datasets[2].data = [...h.humidity];
@@ -866,7 +866,7 @@ function updateHistoryChart() {
 }
 
 function updateHealthChart() {
-  healthChart.data.datasets[0].data            = PLANTS.map(p => calcHealth(p.id));
+  healthChart.data.datasets[0].data = PLANTS.map(p => calcHealth(p.id));
   healthChart.data.datasets[0].backgroundColor = PLANTS.map(p => healthColor(calcHealth(p.id)) + 'cc');
   healthChart.update('none');
 }
@@ -895,7 +895,7 @@ function addLog(plant, msg, type = 'info') {
 }
 
 function renderLog() {
-  const ul   = document.getElementById('event-log');
+  const ul = document.getElementById('event-log');
   const dotC = { ok: 'ldot-ok', warn: 'ldot-warn', danger: 'ldot-danger', info: 'ldot-info' };
 
   if (!eventLog.length) {
@@ -941,7 +941,7 @@ function exportCSV() {
   ];
 
   const rows = PLANTS.map(p => {
-    const s      = sensorState[p.id];
+    const s = sensorState[p.id];
     const health = calcHealth(p.id);
     return [
       p.name, p.hindiName, p.species, p.location, health,
@@ -958,9 +958,9 @@ function exportCSV() {
   ].join('\n');
 
   const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-  const url  = URL.createObjectURL(blob);
-  const a    = document.createElement('a');
-  a.href     = url;
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
   a.download = `vanaraksha-${new Date().toISOString().slice(0, 10)}.csv`;
   a.click();
   URL.revokeObjectURL(url);
