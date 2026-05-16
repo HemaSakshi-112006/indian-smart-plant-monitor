@@ -46,7 +46,7 @@ const PLANTS = [
       ph: { min: 6.0, max: 8.5, ideal: [7.0, 8.0] },
       water: { min: 15, max: 100, ideal: [30, 80] }
     },
-    base: { moisture: 36, temperature: 33, humidity: 48, light: 980, ph: 7.4, water: 58 },
+    base: { moisture: 36, temperature: 33, humidity: 31, light: 980, ph: 7.4, water: 58 },
     tips: {
       watering: 'Drought-tolerant once established. Water deeply once a week; twice in peak summer.',
       sunlight: 'Full sun — needs 6+ hours. Thrives in intense Indian sun, struggles in shade.',
